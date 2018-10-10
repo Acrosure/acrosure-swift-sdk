@@ -26,3 +26,9 @@ Without xcpretty:
 ```shell
 xcodebuild test-without-building -workspace AcrosureSDK.xcworkspace -scheme AcrosureSDKTests -destination 'platform=iOS Simulator,name=iPhone 6s,OS=12.0'
 ```
+
+Nodemon + xcpretty:
+
+```shell
+nodemon --watch ./ --exec "xcodebuild test -workspace AcrosureSDK.xcworkspace -scheme AcrosureSDKTests -destination 'platform=iOS Simulator,name=iPhone 6s,OS=12.0' | xcpretty"
+```

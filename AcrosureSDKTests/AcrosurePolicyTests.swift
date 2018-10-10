@@ -1,5 +1,5 @@
 //
-//  AcrosureProductTests.swift
+//  AcrosurePolicyTests.swift
 //  AcrosureSDKTests
 //
 //  Created by Aikdanai Sidhikosol on 10/10/2561 BE.
@@ -9,28 +9,29 @@
 import XCTest
 @testable import AcrosureSDK
 
-class AcrosureProductTests: XCTestCase {
-    var TEST_PRODUCT_ID = "prod_ta"
+class AcrosurePolicyTests: XCTestCase {
+    var TEST_POLICY_ID = "plcy_sample"
     
     func testGet() {
         let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
-        let expectation = self.expectation(description: "Getting product")
+        let expectation = self.expectation(description: "Getting policy")
         var result = AcrosureResponse()
-        client.product.get(id: TEST_PRODUCT_ID) { resp in
+        client.policy.get(id: TEST_POLICY_ID) { resp in
             result = resp
             expectation.fulfill()
         }
         waitForExpectations(timeout: 5) { (error) in
             if let error = error { XCTFail("timeout errored: \(error)") }
+            print(result)
             XCTAssertEqual(result.status, "ok")
         }
     }
     
     func testList() {
         let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
-        let expectation = self.expectation(description: "Listing product")
+        let expectation = self.expectation(description: "Listing policies")
         var result = AcrosureResponse()
-        client.product.list() { resp in
+        client.policy.list() { resp in
             result = resp
             expectation.fulfill()
         }

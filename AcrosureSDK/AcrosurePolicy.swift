@@ -17,20 +17,20 @@ class AcrosurePolicy {
         self.api = api
     }
     
-    func get(id: String, handler: @escaping (AcrosureResponse) -> Void) {
+    func get(id: String, callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
-            path:"/policies/get",
+            path: "/policies/get",
             data: [
                 "policy_id": id
             ]
-        ) { resp in handler(resp) }
+        ) { resp in callback(resp) }
     }
     
-    func list(query: Parameters? = [:], handler: @escaping (AcrosureResponse) -> Void) {
+    func list(query: JSON? = [], callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
-            path:"/policies/list",
+            path: "/policies/list",
             data: query
-        ) { resp in handler(resp) }
+        ) { resp in callback(resp) }
     }
 }
 

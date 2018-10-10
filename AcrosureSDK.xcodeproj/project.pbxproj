@@ -18,6 +18,8 @@
 		27B432BE216E2641000852E1 /* AcrosureProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B432BD216E2641000852E1 /* AcrosureProductTests.swift */; };
 		27B432C0216E2EF3000852E1 /* AcrosurePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B432BF216E2EF3000852E1 /* AcrosurePolicy.swift */; };
 		27B432C2216E3943000852E1 /* AcrosurePolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B432C1216E3943000852E1 /* AcrosurePolicyTests.swift */; };
+		27B432C4216E3F00000852E1 /* AcrosureDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B432C3216E3F00000852E1 /* AcrosureDataTests.swift */; };
+		27B432C6216E3F0C000852E1 /* AcrosureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B432C5216E3F0C000852E1 /* AcrosureData.swift */; };
 		4ABA03D15EC9B963533469A2 /* Pods_AcrosureSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC25F03FAFE7716394D36F4 /* Pods_AcrosureSDK.framework */; };
 		58536F22052F982403BDCC0E /* Pods_AcrosureSDK_AcrosureSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9F665C60DA05E78BE35375B /* Pods_AcrosureSDK_AcrosureSDKTests.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +49,8 @@
 		27B432BD216E2641000852E1 /* AcrosureProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcrosureProductTests.swift; sourceTree = "<group>"; };
 		27B432BF216E2EF3000852E1 /* AcrosurePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcrosurePolicy.swift; sourceTree = "<group>"; };
 		27B432C1216E3943000852E1 /* AcrosurePolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcrosurePolicyTests.swift; sourceTree = "<group>"; };
+		27B432C3216E3F00000852E1 /* AcrosureDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcrosureDataTests.swift; sourceTree = "<group>"; };
+		27B432C5216E3F0C000852E1 /* AcrosureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcrosureData.swift; sourceTree = "<group>"; };
 		3E988DBB0E6DE63E1F2B2B9F /* Pods-AcrosureSDK-AcrosureSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcrosureSDK-AcrosureSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcrosureSDK-AcrosureSDKTests/Pods-AcrosureSDK-AcrosureSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		50DAD3A9FC27C56C42A8651F /* Pods-AcrosureSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcrosureSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcrosureSDKTests/Pods-AcrosureSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		62AD2EFD7964F16D836848B1 /* Pods-AcrosureSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcrosureSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcrosureSDK/Pods-AcrosureSDK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 				27B432B5216E0FFD000852E1 /* AcrosureApplication.swift */,
 				27B432B7216E2486000852E1 /* AcrosureProduct.swift */,
 				27B432BF216E2EF3000852E1 /* AcrosurePolicy.swift */,
+				27B432C5216E3F0C000852E1 /* AcrosureData.swift */,
 			);
 			path = AcrosureSDK;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 				27B432B9216E2607000852E1 /* constant.swift */,
 				27B432BD216E2641000852E1 /* AcrosureProductTests.swift */,
 				27B432C1216E3943000852E1 /* AcrosurePolicyTests.swift */,
+				27B432C3216E3F00000852E1 /* AcrosureDataTests.swift */,
 			);
 			path = AcrosureSDKTests;
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 				27291C39216DD39700DC2ADA /* AcrosureClient.swift in Sources */,
 				27B432B8216E2486000852E1 /* AcrosureProduct.swift in Sources */,
 				27B432C0216E2EF3000852E1 /* AcrosurePolicy.swift in Sources */,
+				27B432C6216E3F0C000852E1 /* AcrosureData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +350,7 @@
 				27B432B4216E0ADF000852E1 /* AcrosureApplicationTests.swift in Sources */,
 				27B432BE216E2641000852E1 /* AcrosureProductTests.swift in Sources */,
 				27B432C2216E3943000852E1 /* AcrosurePolicyTests.swift in Sources */,
+				27B432C4216E3F00000852E1 /* AcrosureDataTests.swift in Sources */,
 				27B432BA216E2607000852E1 /* constant.swift in Sources */,
 				27291C2D216DD07100DC2ADA /* AcrosureSDKTests.swift in Sources */,
 			);

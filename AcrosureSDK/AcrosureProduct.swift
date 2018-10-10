@@ -18,19 +18,19 @@ class AcrosureProduct {
         self.api = api
     }
     
-    func get(id: String, handler: @escaping (AcrosureResponse) -> Void) {
+    func get(id: String, callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
             path:"/products/get",
             data: [
                 "product_id": id
             ]
-        ) { resp in handler(resp) }
+        ) { resp in callback(resp) }
     }
     
-    func list(handler: @escaping (AcrosureResponse) -> Void) {
+    func list(callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
             path:"/products/list"
-        ) { resp in handler(resp) }
+        ) { resp in callback(resp) }
     }
 }
 

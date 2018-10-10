@@ -17,12 +17,14 @@ class AcrosureClient {
     var application: AcrosureApplication
     var product: AcrosureProduct
     var policy: AcrosurePolicy
+    var data: AcrosureData
     
     init(token: String) {
         self.api = AcrosureAPI(token: token)
         self.application = AcrosureApplication(api: self.api)
         self.product = AcrosureProduct(api: self.api)
         self.policy = AcrosurePolicy(api: self.api)
+        self.data = AcrosureData(api: self.api)
     }
     
     func setToken(token: String) {
@@ -70,13 +72,15 @@ class AcrosureAPI {
     
     func call(
         path: String,
-        data: Parameters? = [:],
-        handler: @escaping (AcrosureResponse) -> Void
+        data: JSON? = [],
+        callback: @escaping (AcrosureResponse) -> Void
     ) {
+        let parameters: Parameters = data?.dictionaryObject ?? [:]
+        print(parameters)
         Alamofire.request(
             "https://api.phantompage.com\(path)",
             method: HTTPMethod.post,
-            parameters: data,
+            parameters: parameters,
             encoding: JSONEncoding.default,
             headers: [
                 "Authorization": "Bearer \(self.token)"
@@ -84,10 +88,10 @@ class AcrosureAPI {
         ).responseJSON { response in
             if let json = response.result.value {
                 let acrosureResponse = self.convertToAcrosureResponse(json: JSON(json))
-                handler(acrosureResponse)
+                callback(acrosureResponse)
             } else if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 let acrosureResponse = self.convertToAcrosureResponse(json: JSON(utf8Text))
-                handler(acrosureResponse)
+                callback(acrosureResponse)
             }
         }
     }

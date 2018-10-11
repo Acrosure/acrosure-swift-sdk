@@ -1,17 +1,16 @@
 //
-//  AcrosureProduct.swift
+//  AcrosurePolicyManager.swift
 //  AcrosureSDK
 //
 //  Created by Aikdanai Sidhikosol on 10/10/2561 BE.
 //  Copyright © 2561 Acrosure. All rights reserved.
 //
 
-
 import Foundation
 import Alamofire
 import SwiftyJSON
 
-class AcrosureProduct {
+class AcrosurePolicyManager {
     var api: AcrosureAPI
     
     init(api: AcrosureAPI) {
@@ -20,17 +19,19 @@ class AcrosureProduct {
     
     func get(id: String, callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
-            path:"/products/get",
+            path: "/policies/get",
             data: [
-                "product_id": id
+                "policy_id": id
             ]
         ) { resp in callback(resp) }
     }
     
-    func list(callback: @escaping (AcrosureResponse) -> Void) {
+    func list(query: JSON? = [], callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
-            path:"/products/list"
+            path: "/policies/list",
+            data: query
         ) { resp in callback(resp) }
     }
 }
+
 

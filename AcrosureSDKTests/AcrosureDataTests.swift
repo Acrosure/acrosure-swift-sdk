@@ -20,7 +20,6 @@ class AcrosureDataTests: XCTestCase {
         }
         waitForExpectations(timeout: 5) { (error) in
             if let error = error { XCTFail("timeout errored: \(error)") }
-            print(result)
             XCTAssertEqual(result.status, "ok")
         }
     }

@@ -1,5 +1,5 @@
 //
-//  AcrosureData.swift
+//  AcrosureDataManager.swift
 //  AcrosureSDK
 //
 //  Created by Aikdanai Sidhikosol on 10/10/2561 BE.
@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class AcrosureData {
+class AcrosureDataManager {
     var api: AcrosureAPI
     
     init(api: AcrosureAPI) {
@@ -18,10 +18,9 @@ class AcrosureData {
     }
     
     func get(handler: String, dependencies: JSON? = [], callback: @escaping (AcrosureResponse) -> Void) {
-        let data: JSON = JSON([
-            "handler": handler,
-            "dependencies": dependencies?.array
-        ])
+        var data = JSON()
+        data["handler"].string  = handler
+        data["dependencies"]    = JSON(dependencies?.array ?? [])
         return api.call(
             path: "/data/get",
             data: data

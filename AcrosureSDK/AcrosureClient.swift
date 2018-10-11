@@ -14,17 +14,17 @@ typealias GetTokenHandler = () -> String
 
 class AcrosureClient {
     var api: AcrosureAPI
-    var application: AcrosureApplication
-    var product: AcrosureProduct
-    var policy: AcrosurePolicy
-    var data: AcrosureData
+    var application: AcrosureApplicationManager
+    var product: AcrosureProductManager
+    var policy: AcrosurePolicyManager
+    var data: AcrosureDataManager
     
     init(token: String) {
         self.api = AcrosureAPI(token: token)
-        self.application = AcrosureApplication(api: self.api)
-        self.product = AcrosureProduct(api: self.api)
-        self.policy = AcrosurePolicy(api: self.api)
-        self.data = AcrosureData(api: self.api)
+        self.application = AcrosureApplicationManager(api: self.api)
+        self.product = AcrosureProductManager(api: self.api)
+        self.policy = AcrosurePolicyManager(api: self.api)
+        self.data = AcrosureDataManager(api: self.api)
     }
     
     func setToken(token: String) {
@@ -33,19 +33,6 @@ class AcrosureClient {
     
     func getToken() -> String {
         return self.api.token
-    }
-}
-
-struct AcrosureResponse {
-    var status: String?
-    var data: JSON
-    var message: String?
-    var pagination: JSON
-    init(status: String? = nil, data: JSON = [], message: String? = nil, pagination: JSON = []) {
-        self.status = status
-        self.data = data
-        self.message = message
-        self.pagination = pagination
     }
 }
 
@@ -62,7 +49,7 @@ class AcrosureAPI {
     
     func convertToAcrosureResponse(json: JSON) -> AcrosureResponse {
         let acrosureResponse = AcrosureResponse(
-            status: json["status"].string,
+            status: json["status"].string ?? "",
             data: json["data"],
             message: json["message"].string,
             pagination: json["pagination"]
@@ -76,7 +63,6 @@ class AcrosureAPI {
         callback: @escaping (AcrosureResponse) -> Void
     ) {
         let parameters: Parameters = data?.dictionaryObject ?? [:]
-        print(parameters)
         Alamofire.request(
             "https://api.phantompage.com\(path)",
             method: HTTPMethod.post,

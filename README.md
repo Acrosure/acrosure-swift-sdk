@@ -2,6 +2,49 @@
 
 Swift SDK for connecting with Acrosure Insurance Gateway
 
+## Installation
+
+### CocoaPods (iOS 8+)
+
+You can use CocoaPods to install AcrosureSDK by adding it to your Podfile:
+
+```
+platform :ios, '8.0'
+use_frameworks!
+
+target 'MyApp' do
+    pod 'AcrosureSDK', '~> 1.0'
+end
+```
+
+### Carthage (iOS 8+)
+
+You can use Carthage to install AcrosureSDK by adding it to your Cartfile:
+
+```
+github "AcrosureSDK/AcrosureSDK" ~> 1.0
+```
+
+If you use Carthage to build your dependencies, make sure you have added AcrosureSDK.framework to the "Linked Frameworks and Libraries" section of your target, and have included them in your Carthage framework copying build phase.
+
+### Swift Package Manager
+
+You can use The Swift Package Manager to install AcrosureSDK by adding the proper description to your Package.swift file:
+
+```
+// swift-tools-version:4.0
+import PackageDescription
+
+let package = Package(
+    name: "YOUR_PROJECT_NAME",
+    dependencies: [
+        .package(url: "https://github.com/AcrosureSDK/AcrosureSDK.git", from: "1.0.0"),
+    ]
+)
+```
+
+Then run swift build whenever you are prepared.
+
 ## Getting Started
 
 Import AcrosureClient into your project.

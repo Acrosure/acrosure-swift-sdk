@@ -18,6 +18,7 @@ class AcrosureClient {
     var product: AcrosureProductManager
     var policy: AcrosurePolicyManager
     var data: AcrosureDataManager
+    var team: AcrosureTeamManager
     
     init(token: String) {
         self.api = AcrosureAPI(token: token)
@@ -25,6 +26,7 @@ class AcrosureClient {
         self.product = AcrosureProductManager(api: self.api)
         self.policy = AcrosurePolicyManager(api: self.api)
         self.data = AcrosureDataManager(api: self.api)
+        self.team = AcrosureTeamManager(api: self.api)
     }
     
     func setToken(token: String) {

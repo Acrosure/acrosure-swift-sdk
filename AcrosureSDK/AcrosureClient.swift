@@ -13,12 +13,12 @@ import SwiftyJSON
 typealias GetTokenHandler = () -> String
 
 public class AcrosureClient {
-    var api: AcrosureAPI
-    var application: AcrosureApplicationManager
-    var product: AcrosureProductManager
-    var policy: AcrosurePolicyManager
-    var data: AcrosureDataManager
-    var team: AcrosureTeamManager
+    public var api: AcrosureAPI
+    public var application: AcrosureApplicationManager
+    public var product: AcrosureProductManager
+    public var policy: AcrosurePolicyManager
+    public var data: AcrosureDataManager
+    public var team: AcrosureTeamManager
     
     public init(token: String, apiURL: String? = nil) {
         self.api = AcrosureAPI(token: token, apiURL: apiURL ?? "https://api.acrosure.com")

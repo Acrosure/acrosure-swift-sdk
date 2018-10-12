@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "AcrosureSDK"
-  s.version = "1.0.5"
+  s.version = "1.0.6"
   s.summary = "Swift SDK for connecting with Acrosure Insurance Gateway."
   s.license = 'MIT'
   s.homepage = 'https://acrosure.com'

@@ -10,10 +10,10 @@ import Foundation
 import SwiftyJSON
 
 public struct AcrosureResponse {
-    var status: String?
-    var data: JSON?
-    var message: String?
-    var pagination: JSON?
+    public var status: String?
+    public var data: JSON?
+    public var message: String?
+    public var pagination: JSON?
 
     public init(
         status: String? = nil,
@@ -29,22 +29,22 @@ public struct AcrosureResponse {
 }
 
 public struct AcrosureFile {
-    var title: String
-    var url: String
-    var signedUrl: String? = ""
+    public var title: String
+    public var url: String
+    public var signedUrl: String? = ""
 }
 
 public struct AcrosureApplicationQuery: Codable {
-    var offset: Int?
-    var limit: Int?
-    var orderBy: String?
-    var desc: Bool?
-    var status: String?
-    var source: String?
-    var productId: String?
-    var teamId: String?
-    var query: String?
-    var partialMatch: Bool?
+    public var offset: Int?
+    public var limit: Int?
+    public var orderBy: String?
+    public var desc: Bool?
+    public var status: String?
+    public var source: String?
+    public var productId: String?
+    public var teamId: String?
+    public var query: String?
+    public var partialMatch: Bool?
 
     public init(
         offset: Int? = nil,

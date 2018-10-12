@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 let TEST_PUBLIC_TOKEN = "tokn_sample_public"
 let TEST_SECRET_TOKEN = "tokn_sample_secret"
 let TEST_API_URL = "https://api.phantompage.com"
 
-let APP_DATA = [
+let APP_DATA = JSON([
     "product_id": "prod_ta",
     "basic_data": [
         "countries": ["GERMANY", "JAPAN"],
@@ -85,4 +86,4 @@ let APP_DATA = [
             ]
         ]
     ]
-] as [String : Any?]
+])

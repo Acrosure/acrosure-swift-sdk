@@ -13,11 +13,11 @@ import SwiftyJSON
 public class AcrosureApplicationManager {
     var api: AcrosureAPI
 
-    init(api: AcrosureAPI) {
+    public init(api: AcrosureAPI) {
         self.api = api
     }
     
-    func get(id: String, callback: @escaping (AcrosureResponse) -> Void) {
+    public func get(id: String, callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
             path: "/applications/get",
             data: [
@@ -26,7 +26,7 @@ public class AcrosureApplicationManager {
         ) { resp in callback(resp) }
     }
     
-    func list(query: AcrosureApplicationQuery?, callback: @escaping (AcrosureResponse) -> Void) {
+    public func list(query: AcrosureApplicationQuery?, callback: @escaping (AcrosureResponse) -> Void) {
         var data = JSON()
         data["offset"].int          = query?.offset
         data["limit"].int           = query?.limit
@@ -44,7 +44,7 @@ public class AcrosureApplicationManager {
         ) { resp in callback(resp) }
     }
     
-    func create(
+    public func create(
         productId: String,
         basicData: JSON? = nil,
         packageOptions: JSON? = nil,
@@ -84,7 +84,7 @@ public class AcrosureApplicationManager {
         ) { resp in callback(resp) }
     }
 
-    func update(
+    public func update(
         id: String,
         basicData: JSON? = nil,
         packageOptions: JSON? = nil,
@@ -126,7 +126,7 @@ public class AcrosureApplicationManager {
         ) { resp in callback(resp) }
     }
     
-    func getPackages(id: String, callback: @escaping (AcrosureResponse) -> Void) {
+    public func getPackages(id: String, callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
             path: "/applications/get-packages",
             data: [
@@ -135,7 +135,7 @@ public class AcrosureApplicationManager {
         ) { resp in callback(resp) }
     }
     
-    func getPackage(id: String, callback: @escaping (AcrosureResponse) -> Void) {
+    public func getPackage(id: String, callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
             path: "/applications/get-package",
             data: [
@@ -144,7 +144,7 @@ public class AcrosureApplicationManager {
         ) { resp in callback(resp) }
     }
     
-    func selectPackage(id: String, packageCode: String, callback: @escaping (AcrosureResponse) -> Void) {
+    public func selectPackage(id: String, packageCode: String, callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
             path: "/applications/select-package",
             data: [
@@ -154,7 +154,7 @@ public class AcrosureApplicationManager {
         ) { resp in callback(resp) }
     }
     
-    func submit(id: String, callback: @escaping (AcrosureResponse) -> Void) {
+    public func submit(id: String, callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
             path: "/applications/submit",
             data: [
@@ -163,7 +163,7 @@ public class AcrosureApplicationManager {
         ) { resp in callback(resp) }
     }
     
-    func confirm(id: String, callback: @escaping (AcrosureResponse) -> Void) {
+    public func confirm(id: String, callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
             path: "/applications/confirm",
             data: [
@@ -172,7 +172,7 @@ public class AcrosureApplicationManager {
         ) { resp in callback(resp) }
     }
     
-    func getHash(id: String, frontendUrl: String, callback: @escaping (AcrosureResponse) -> Void) {
+    public func getHash(id: String, frontendUrl: String, callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
             path: "/payments/2c2p/get-hash",
             data: [

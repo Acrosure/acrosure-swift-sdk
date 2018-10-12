@@ -14,11 +14,11 @@ import SwiftyJSON
 public class AcrosureProductManager {
     var api: AcrosureAPI
     
-    init(api: AcrosureAPI) {
+    public init(api: AcrosureAPI) {
         self.api = api
     }
     
-    func get(id: String, callback: @escaping (AcrosureResponse) -> Void) {
+    public func get(id: String, callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
             path:"/products/get",
             data: [
@@ -27,7 +27,7 @@ public class AcrosureProductManager {
         ) { resp in callback(resp) }
     }
     
-    func list(callback: @escaping (AcrosureResponse) -> Void) {
+    public func list(callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
             path:"/products/list"
         ) { resp in callback(resp) }

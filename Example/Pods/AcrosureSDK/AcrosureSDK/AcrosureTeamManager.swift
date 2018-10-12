@@ -13,11 +13,11 @@ import SwiftyJSON
 public class AcrosureTeamManager {
     var api: AcrosureAPI
     
-    init(api: AcrosureAPI) {
+    public init(api: AcrosureAPI) {
         self.api = api
     }
     
-    func getInfo(callback: @escaping (AcrosureResponse) -> Void) {
+    public func getInfo(callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
             path: "/teams/get-info"
         ) { resp in callback(resp) }

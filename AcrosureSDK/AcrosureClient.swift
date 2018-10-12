@@ -12,7 +12,7 @@ import SwiftyJSON
 
 typealias GetTokenHandler = () -> String
 
-class AcrosureClient {
+public class AcrosureClient {
     var api: AcrosureAPI
     var application: AcrosureApplicationManager
     var product: AcrosureProductManager
@@ -38,7 +38,7 @@ class AcrosureClient {
     }
 }
 
-class AcrosureAPI {
+public class AcrosureAPI {
     var token: String
     var apiURL: String
     

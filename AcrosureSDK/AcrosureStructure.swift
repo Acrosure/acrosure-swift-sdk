@@ -15,7 +15,7 @@ public struct AcrosureResponse {
     var message: String?
     var pagination: JSON?
 
-    init(
+    public init(
         status: String? = nil,
         data: JSON? = [],
         message: String? = nil,
@@ -46,7 +46,7 @@ public struct AcrosureApplicationQuery: Codable {
     var query: String?
     var partialMatch: Bool?
 
-    init(
+    public init(
         offset: Int? = nil,
         limit: Int? = nil,
         orderBy: String? = nil,

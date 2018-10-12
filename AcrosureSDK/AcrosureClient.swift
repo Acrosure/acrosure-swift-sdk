@@ -20,7 +20,7 @@ public class AcrosureClient {
     var data: AcrosureDataManager
     var team: AcrosureTeamManager
     
-    init(token: String, apiURL: String? = nil) {
+    public init(token: String, apiURL: String? = nil) {
         self.api = AcrosureAPI(token: token, apiURL: apiURL ?? "https://api.acrosure.com")
         self.application = AcrosureApplicationManager(api: self.api)
         self.product = AcrosureProductManager(api: self.api)
@@ -29,11 +29,11 @@ public class AcrosureClient {
         self.team = AcrosureTeamManager(api: self.api)
     }
     
-    func setToken(token: String) {
+    public func setToken(token: String) {
         self.api.setToken(token: token)
     }
     
-    func getToken() -> String {
+    public func getToken() -> String {
         return self.api.token
     }
 }
@@ -42,12 +42,12 @@ public class AcrosureAPI {
     var token: String
     var apiURL: String
     
-    init(token: String, apiURL: String) {
+    public init(token: String, apiURL: String) {
         self.token = token
         self.apiURL = apiURL
     }
     
-    func setToken(token: String) {
+    public func setToken(token: String) {
         self.token = token
     }
     
@@ -61,7 +61,7 @@ public class AcrosureAPI {
         return acrosureResponse
     }
     
-    func call(
+    public func call(
         path: String,
         data: JSON? = [],
         callback: @escaping (AcrosureResponse) -> Void

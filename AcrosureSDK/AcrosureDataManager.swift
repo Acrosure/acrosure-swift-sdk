@@ -13,11 +13,11 @@ import SwiftyJSON
 public class AcrosureDataManager {
     var api: AcrosureAPI
     
-    init(api: AcrosureAPI) {
+    public init(api: AcrosureAPI) {
         self.api = api
     }
     
-    func get(handler: String, dependencies: JSON? = [], callback: @escaping (AcrosureResponse) -> Void) {
+    public func get(handler: String, dependencies: JSON? = [], callback: @escaping (AcrosureResponse) -> Void) {
         var data = JSON()
         data["handler"].string  = handler
         data["dependencies"]    = JSON(dependencies?.array ?? [])

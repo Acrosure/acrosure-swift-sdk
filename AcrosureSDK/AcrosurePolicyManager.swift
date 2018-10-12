@@ -13,11 +13,11 @@ import SwiftyJSON
 public class AcrosurePolicyManager {
     var api: AcrosureAPI
     
-    init(api: AcrosureAPI) {
+    public init(api: AcrosureAPI) {
         self.api = api
     }
     
-    func get(id: String, callback: @escaping (AcrosureResponse) -> Void) {
+    public func get(id: String, callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
             path: "/policies/get",
             data: [
@@ -26,7 +26,7 @@ public class AcrosurePolicyManager {
         ) { resp in callback(resp) }
     }
     
-    func list(query: JSON? = [], callback: @escaping (AcrosureResponse) -> Void) {
+    public func list(query: JSON? = [], callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
             path: "/policies/list",
             data: query

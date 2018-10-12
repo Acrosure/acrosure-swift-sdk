@@ -163,15 +163,6 @@ public class AcrosureApplicationManager {
         ) { resp in callback(resp) }
     }
     
-    public func confirm(id: String, callback: @escaping (AcrosureResponse) -> Void) {
-        return api.call(
-            path: "/applications/confirm",
-            data: [
-                "application_id": id
-            ]
-        ) { resp in callback(resp) }
-    }
-    
     public func getHash(id: String, frontendUrl: String, callback: @escaping (AcrosureResponse) -> Void) {
         return api.call(
             path: "/payments/2c2p/get-hash",

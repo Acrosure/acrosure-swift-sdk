@@ -171,18 +171,6 @@ client.application.submit(id: 'appl_SAMPLE01') { response in
 }
 ```
 
-#### Confirm
-
-Confirm current application.
-
-_This function needs secret API key._
-
-```swift
-client.application.confirm(id: 'appl_SAMPLE01') { response in
-  // ...
-}
-```
-
 #### List
 
 List your applications (with or without query).
@@ -284,7 +272,6 @@ Please refer to [Acrosure API Document](https://docs.acrosure.com/docs/api-overa
 /applications/get-package
 /applications/select-package
 /applications/submit
-/applications/confirm
 /applications/get-hash
 ```
 

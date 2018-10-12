@@ -284,19 +284,4 @@ class AcrosureApplicationConfirmTests: XCTestCase {
             XCTAssertEqual(AcrosureApplicationStatus.READY.rawValue, result.data?["status"].string)
         }
     }
-    
-    func test08_confirm() {
-        let client = AcrosureClient(token: TEST_SECRET_TOKEN, apiURL: TEST_API_URL)
-        let expectation = self.expectation(description: "Confirming application")
-        var result = AcrosureResponse()
-        client.application.confirm(id: applicationId) { resp in
-            result = resp
-            expectation.fulfill()
-        }
-        waitForExpectations(timeout: 15) { (error) in
-            if let error = error { XCTFail("timeout errored: \(error)") }
-            XCTAssertEqual(applicationId, result.data?["id"].string)
-            XCTAssertEqual(AcrosureApplicationStatus.CONFIRMING.rawValue, result.data?["status"].string)
-        }
-    }
 }

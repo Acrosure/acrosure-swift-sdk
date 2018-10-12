@@ -11,7 +11,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class AcrosureProductManager {
+public class AcrosureProductManager {
     var api: AcrosureAPI
     
     init(api: AcrosureAPI) {

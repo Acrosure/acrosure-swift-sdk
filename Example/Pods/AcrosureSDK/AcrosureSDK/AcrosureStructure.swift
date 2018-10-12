@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-struct AcrosureResponse {
+public struct AcrosureResponse {
     var status: String?
     var data: JSON?
     var message: String?
@@ -28,13 +28,13 @@ struct AcrosureResponse {
     }
 }
 
-struct AcrosureFile {
+public struct AcrosureFile {
     var title: String
     var url: String
     var signedUrl: String? = ""
 }
 
-struct AcrosureApplicationQuery: Codable {
+public struct AcrosureApplicationQuery: Codable {
     var offset: Int?
     var limit: Int?
     var orderBy: String?
@@ -71,7 +71,7 @@ struct AcrosureApplicationQuery: Codable {
     }
 }
 
-enum AcrosureApplicationStatus: String {
+public enum AcrosureApplicationStatus: String {
     case INITIAL            = "INITIAL"
     case PACKAGE_REQUIRED   = "PACKAGE_REQUIRED"
     case DATA_REQUIRED      = "DATA_REQUIRED"
@@ -85,13 +85,13 @@ enum AcrosureApplicationStatus: String {
     case RENEWED            = "RENEWED"
 }
 
-enum AcrosureApplicationSource: String {
+public enum AcrosureApplicationSource: String {
     case PARTNER    = "PARTNER"
     case CUSTOMER   = "CUSTOMER"
     case NONE       = ""
 }
 
-enum AcrosureProductCompleteProcess: String {
+public enum AcrosureProductCompleteProcess: String {
     case CONFIRM    = "CONFIRM"
     case SUBMIT     = "SUBMIT"
 }

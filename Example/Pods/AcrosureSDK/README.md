@@ -22,7 +22,7 @@ end
 You can use Carthage to install AcrosureSDK by adding it to your Cartfile:
 
 ```
-github "AcrosureSDK/AcrosureSDK" ~> 1.0
+github "AcrosureSDK/acrosure-swift-sdk" ~> 1.0
 ```
 
 If you use Carthage to build your dependencies, make sure you have added AcrosureSDK.framework to the "Linked Frameworks and Libraries" section of your target, and have included them in your Carthage framework copying build phase.
@@ -38,7 +38,7 @@ import PackageDescription
 let package = Package(
     name: "YOUR_PROJECT_NAME",
     dependencies: [
-        .package(url: "https://github.com/AcrosureSDK/AcrosureSDK.git", from: "1.0.0"),
+        .package(url: "https://github.com/AcrosureSDK/acrosure-swift-sdk.git", from: "1.0.0"),
     ]
 )
 ```

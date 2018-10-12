@@ -12,7 +12,7 @@ import SwiftyJSON
 
 typealias GetTokenHandler = () -> String
 
-class AcrosureClient {
+public class AcrosureClient {
     var api: AcrosureAPI
     var application: AcrosureApplicationManager
     var product: AcrosureProductManager
@@ -20,8 +20,8 @@ class AcrosureClient {
     var data: AcrosureDataManager
     var team: AcrosureTeamManager
     
-    init(token: String) {
-        self.api = AcrosureAPI(token: token)
+    init(token: String, apiURL: String? = nil) {
+        self.api = AcrosureAPI(token: token, apiURL: apiURL ?? "https://api.acrosure.com")
         self.application = AcrosureApplicationManager(api: self.api)
         self.product = AcrosureProductManager(api: self.api)
         self.policy = AcrosurePolicyManager(api: self.api)
@@ -38,11 +38,13 @@ class AcrosureClient {
     }
 }
 
-class AcrosureAPI {
+public class AcrosureAPI {
     var token: String
+    var apiURL: String
     
-    init(token: String) {
+    init(token: String, apiURL: String) {
         self.token = token
+        self.apiURL = apiURL
     }
     
     func setToken(token: String) {
@@ -66,7 +68,7 @@ class AcrosureAPI {
     ) {
         let parameters: Parameters = data?.dictionaryObject ?? [:]
         Alamofire.request(
-            "https://api.phantompage.com\(path)",
+            "\(self.apiURL)\(path)",
             method: HTTPMethod.post,
             parameters: parameters,
             encoding: JSONEncoding.default,

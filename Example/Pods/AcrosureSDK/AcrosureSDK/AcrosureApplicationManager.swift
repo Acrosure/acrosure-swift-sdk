@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class AcrosureApplicationManager {
+public class AcrosureApplicationManager {
     var api: AcrosureAPI
 
     init(api: AcrosureAPI) {

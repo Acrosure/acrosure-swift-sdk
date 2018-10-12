@@ -8,6 +8,7 @@
 
 let TEST_PUBLIC_TOKEN = "tokn_sample_public"
 let TEST_SECRET_TOKEN = "tokn_sample_secret"
+let TEST_API_URL = "https://api.phantompage.com"
 
 let SUBMIT_APP_DATA = [
     "product_id": "prod_contractor",

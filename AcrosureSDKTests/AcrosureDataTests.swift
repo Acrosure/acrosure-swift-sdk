@@ -11,7 +11,7 @@ import XCTest
 
 class AcrosureDataTests: XCTestCase {
     func testGetWithoutDependencies() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Getting data with dependencies")
         var result = AcrosureResponse()
         client.data.get(handler: "province") { resp in
@@ -25,7 +25,7 @@ class AcrosureDataTests: XCTestCase {
     }
     
     func testGetWithDependencies() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Getting data with dependencies")
         var result = AcrosureResponse()
         client.data.get(handler: "subdistrict", dependencies:["กรุงเทพมหานคร","วังทองหลาง"]) { resp in

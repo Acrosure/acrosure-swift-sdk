@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class AcrosureSDKTests: XCTestCase {
     func testClientInitialization() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         XCTAssertNotNil(client)
         XCTAssertNotNil(client.api)
         XCTAssertEqual(client.api.token, TEST_PUBLIC_TOKEN)

@@ -11,7 +11,7 @@ import XCTest
 
 class AcrosureTeamTests: XCTestCase {
     func testGetInfo() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Getting team info")
         var result = AcrosureResponse()
         client.team.getInfo { resp in

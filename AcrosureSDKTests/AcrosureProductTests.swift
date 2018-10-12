@@ -13,7 +13,7 @@ class AcrosureProductTests: XCTestCase {
     var TEST_PRODUCT_ID = "prod_ta"
     
     func testGet() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Getting product")
         var result = AcrosureResponse()
         client.product.get(id: TEST_PRODUCT_ID) { resp in
@@ -27,7 +27,7 @@ class AcrosureProductTests: XCTestCase {
     }
     
     func testList() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Listing product")
         var result = AcrosureResponse()
         client.product.list() { resp in

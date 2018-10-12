@@ -13,7 +13,7 @@ class AcrosurePolicyTests: XCTestCase {
     var TEST_POLICY_ID = "plcy_sample"
     
     func testGet() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Getting policy")
         var result = AcrosureResponse()
         client.policy.get(id: TEST_POLICY_ID) { resp in
@@ -27,7 +27,7 @@ class AcrosurePolicyTests: XCTestCase {
     }
     
     func testList() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Listing policies")
         var result = AcrosureResponse()
         client.policy.list() { resp in

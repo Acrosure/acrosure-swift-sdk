@@ -16,7 +16,7 @@ var packageCode = ""
 class AcrosureApplicationSubmitTests: XCTestCase {
     var appData = JSON(SUBMIT_APP_DATA)
     func test01_createEmpty() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Creating application")
         var result = AcrosureResponse()
         client.application.create(productId: self.appData["product_id"].string!) { resp in
@@ -32,7 +32,7 @@ class AcrosureApplicationSubmitTests: XCTestCase {
     }
     
     func test02_get() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Getting application")
         var result = AcrosureResponse()
         client.application.get(id: applicationId) { resp in
@@ -47,7 +47,7 @@ class AcrosureApplicationSubmitTests: XCTestCase {
     }
     
     func test03_updateBasicData() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Updating application")
         var result = AcrosureResponse()
         client.application.update(id: applicationId, basicData: self.appData["basic_data"]) { resp in
@@ -63,7 +63,7 @@ class AcrosureApplicationSubmitTests: XCTestCase {
     }
 
     func test04_getPackages() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Getting application packages")
         var result = AcrosureResponse()
         client.application.getPackages(id: applicationId) { resp in
@@ -81,7 +81,7 @@ class AcrosureApplicationSubmitTests: XCTestCase {
     }
     
     func test05_selectPackage() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Selecting application package")
         var result = AcrosureResponse()
         client.application.selectPackage(id: applicationId, packageCode: packageCode) { resp in
@@ -96,7 +96,7 @@ class AcrosureApplicationSubmitTests: XCTestCase {
     }
     
     func test06_getCurrentPackage() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Getting current application package")
         var result = AcrosureResponse()
         client.application.getPackage(id: applicationId) { resp in
@@ -111,7 +111,7 @@ class AcrosureApplicationSubmitTests: XCTestCase {
     }
 
     func test07_updateCompletedData() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Updating application")
         var result = AcrosureResponse()
         client.application.update(
@@ -132,7 +132,7 @@ class AcrosureApplicationSubmitTests: XCTestCase {
     }
     
     func test08_getHash() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Getting application hash")
         var result = AcrosureResponse()
         client.application.getHash(
@@ -150,7 +150,7 @@ class AcrosureApplicationSubmitTests: XCTestCase {
     }
     
     func test09_submit() {
-        let client = AcrosureClient(token: TEST_SECRET_TOKEN)
+        let client = AcrosureClient(token: TEST_SECRET_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Submitting application")
         var result = AcrosureResponse()
         client.application.submit(id: applicationId) { resp in
@@ -170,7 +170,7 @@ class AcrosureApplicationSubmitTests: XCTestCase {
 class AcrosureApplicationConfirmTests: XCTestCase {
     var appData = JSON(CONFIRM_APP_DATA)
     func test01_createEmpty() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Creating application")
         var result = AcrosureResponse()
         client.application.create(productId: self.appData["product_id"].string!) { resp in
@@ -186,7 +186,7 @@ class AcrosureApplicationConfirmTests: XCTestCase {
     }
     
     func test02_get() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Getting application")
         var result = AcrosureResponse()
         client.application.get(id: applicationId) { resp in
@@ -201,7 +201,7 @@ class AcrosureApplicationConfirmTests: XCTestCase {
     }
     
     func test03_updateBasicData() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Updating application")
         var result = AcrosureResponse()
         client.application.update(id: applicationId, basicData: self.appData["basic_data"]) { resp in
@@ -217,7 +217,7 @@ class AcrosureApplicationConfirmTests: XCTestCase {
     }
     
     func test04_getPackages() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Getting application packages")
         var result = AcrosureResponse()
         client.application.getPackages(id: applicationId) { resp in
@@ -235,7 +235,7 @@ class AcrosureApplicationConfirmTests: XCTestCase {
     }
     
     func test05_selectPackage() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Selecting application package")
         var result = AcrosureResponse()
         client.application.selectPackage(id: applicationId, packageCode: packageCode) { resp in
@@ -250,7 +250,7 @@ class AcrosureApplicationConfirmTests: XCTestCase {
     }
     
     func test06_getCurrentPackage() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Getting current application package")
         var result = AcrosureResponse()
         client.application.getPackage(id: applicationId) { resp in
@@ -265,7 +265,7 @@ class AcrosureApplicationConfirmTests: XCTestCase {
     }
     
     func test07_updateCompletedData() {
-        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN)
+        let client = AcrosureClient(token: TEST_PUBLIC_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Updating application")
         var result = AcrosureResponse()
         client.application.update(
@@ -286,7 +286,7 @@ class AcrosureApplicationConfirmTests: XCTestCase {
     }
     
     func test08_confirm() {
-        let client = AcrosureClient(token: TEST_SECRET_TOKEN)
+        let client = AcrosureClient(token: TEST_SECRET_TOKEN, apiURL: TEST_API_URL)
         let expectation = self.expectation(description: "Confirming application")
         var result = AcrosureResponse()
         client.application.confirm(id: applicationId) { resp in

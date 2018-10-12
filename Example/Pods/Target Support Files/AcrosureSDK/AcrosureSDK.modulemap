@@ -1,0 +1,6 @@
+framework module AcrosureSDK {
+  umbrella header "AcrosureSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

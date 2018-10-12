@@ -1,0 +1,6 @@
+framework module Pods_AcrosureSDKExample {
+  umbrella header "Pods-AcrosureSDKExample-umbrella.h"
+
+  export *
+  module * { export * }
+}
